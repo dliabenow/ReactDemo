@@ -1,39 +1,19 @@
 ﻿/* Styles go here */
-
-#stars-frame .glyphicon {
-  margin: 0.3em;
-  font-size: 1.75em;
+#content {
+    border-color: chocolate;
+    border-style: solid;
+    display: inline-block;
+    border-width: thin;	
+    width: 300px;
 }
 
-#stars-frame, #answer-frame {
-  width: 40%;
-  float: left;
+.contact-app span {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 1.5em;
 }
 
-#button-frame {
-  width: 20%;
-  float: left;
-  text-align: center;
-  margin-top: 50px;
-}
-
-#stars-frame .well, #answer-frame .well {
-  height: 200px;
-}
-
-#numbers-frame .number, #answer-frame .well span {
-  display: inline-block;
-  margin: 0.5em;
-  background-color: #bbb;
-  width: 30px;
-  text-align: center;
-  font-size: 22px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#numbers-frame .selected-true {
-  background-color: #e8e8e8;
-  color: #ddd;
-  cursor: not-allowed;
+.contactItem {
+    list-style-type: none;
+    padding-left: 10px;
 }

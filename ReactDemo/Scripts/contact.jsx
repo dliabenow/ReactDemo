@@ -18,46 +18,47 @@ var Search = React.createClass({
     render: function() {
         return (
             <div className="search">
-                Search Box
+				Search<input type="search" name="search" />
+				<span className="glyphicon glyphicon-search" aria-hidden="true"></span>
             </div>
         );
     }
 });
 
 var ContactList = React.createClass({
-    render: function() {
-		var contactNodes = this.props.data.map(function(contact) {
-			return (
-					<ListItemWrapper key={contact.ContactId} data={contact} />
-			)
-		})
-		return(
-			<ul>
-				{contactNodes}
-			</ul>
-		);
-    }
+  render: function() {
+    var contactNodes = this.props.contacts.map(function (contact) {
+      return (
+        <ListItemWrapper key={contact.ContactId} FirstName={contact.FirstName} LastName={contact.LastName} />
+      );
+    });
+    return (
+      <div className="contactList">
+        {contactNodes}
+      </div>
+    );
+  }
 });
 
 var ListItemWrapper = React.createClass({
 	render: function() {
-		return <li>{this.props.data.FirstName} {this.props.data.LastName}</li>;
+		return <li className="contactItem"> {this.props.FirstName} {this.props.LastName}</li>;
 	}
 });
 
 var App = React.createClass({
-    render: function() {
+	render: function() {
         return (
             <div className="contact-app">
                 Contact App
                 <Search />
-                <ContactList url="/contacts" />
+                <ContactList contacts={data} />
             </div>
         );
     }
 });
 
 React.render(
-  <App />,
+  <App contacts={data} />,
   document.getElementById('content')
 );
